@@ -3,6 +3,8 @@ from rclpy.node import Node
 from std_msgs.msg import String
 import serial
 import json
+import random
+
 
 class ArduinoNode(Node):
     def __init__(self):
@@ -18,7 +20,6 @@ class ArduinoNode(Node):
         self.timer = self.create_timer(2.0, self.simulate_data)
 
     def simulate_data(self):
-        import random
         accepted = random.choice([True, True, True, False])
         if accepted:
             self.accepted += 1

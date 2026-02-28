@@ -18,7 +18,7 @@ unsigned long ledOnTime = 0;
 const int LED_DURATION = 1000;
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(9600); // USB communication
   pinMode(BUTTON_PIN, INPUT);
   pinMode(GREEN_LED, OUTPUT);
   pinMode(RED_LED, OUTPUT);
@@ -29,11 +29,11 @@ void setup() {
 void loop() {
   int buttonState = digitalRead(BUTTON_PIN);
 
-  if (buttonState == HIGH && lastButton == LOW) {
+  if (buttonState == HIGH && lastButton == LOW) { // rising edge
     delay(50);
     if (digitalRead(BUTTON_PIN) == HIGH) {
       itemCount++;
-      bool accepted = (itemCount % 3 != 0);
+      bool accepted = (itemCount % 3 != 0); // every 3. flask ignore
       handleItem(accepted);
     }
   }
