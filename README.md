@@ -1,7 +1,7 @@
 # Pantesystem
 
 
-- Simulation of a return deposit of flask with ROS2, Docker, Python and arduino.
+- Simulation of a return deposit of bottles with ROS2, Docker, Python and arduino.
 
 Arduino - Mac (USB/serial)
 - Arduino sends JSON-msg through USB to Mac every type the button is pressed.
@@ -19,12 +19,12 @@ Node - Node (ROS2 topics)
 
 ### Arduino-code 
 - pantemaskin.ino
-- Will simulate the deposit return of flask. Every third flask rejected.
+- Will simulate the deposit return of bottles. Every third bottles rejected.
 - Send JSON through the serieport 
 
 ### ROS2 - node
 - arduino_node.py 
-- if hardware not connected, it will generate a random flask (75% accepted, 25% reject), and publish in form of JSON in a ROS2 msg on /pantemaskin/flasker
+- if hardware not connected, it will generate a random bottles (75% accepted, 25% reject), and publish in form of JSON in a ROS2 msg on /pantemaskin/flasker
 
 
 ### Hardware connection/ arduino setup
